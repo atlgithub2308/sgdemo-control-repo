@@ -13,5 +13,16 @@ node default {
   }
 }
 
+node 'puppet.se.automationdemos.com' {
+  user { 'pacificuser1':
+    ensure => 'present',
+  }
+}
+
+#node /^agent[\w._%+-]+/ {
+#  user { ['perodua_user1', 'perodua_user2']:
+#    ensure  => 'absent',
+#  }
+
 # Uncomment the line below to enable ServiceNow Node Classification
 # include servicenow_cmdb_integration::classification
