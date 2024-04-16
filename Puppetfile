@@ -117,3 +117,5 @@ mod 'rgbank',
 mod 'netstat',
     git: 'https://github.com/ipcrm/ipcrm-netstat.git',
     ref: '64bcee0'
+mod 'puppetlabs-cem_linux', '1.9.1'
+mod 'puppetlabs-cem_windows', '1.5.2'
