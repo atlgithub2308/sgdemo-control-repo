@@ -15,7 +15,7 @@ node default {
 
 node 'puppet.se.automationdemos.com' {
   user { 'pacificuser1':
-    ensure => 'present',
+    ensure => 'absent',
   }
 }
 
