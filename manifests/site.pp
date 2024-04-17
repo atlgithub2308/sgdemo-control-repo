@@ -21,7 +21,7 @@ node 'puppet.se.automationdemos.com' {
 
   file { '/myfolder/myfile.txt':
     ensure  => 'file',
-    content => "This is some simple content for the file.\n",
+    content => "my file new content.\n",
   }
 }
 
