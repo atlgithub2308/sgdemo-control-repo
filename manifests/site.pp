@@ -14,8 +14,14 @@ node default {
 }
 
 node 'puppet.se.automationdemos.com' {
+
   user { 'pacificuser1':
     ensure => 'absent',
+  }
+
+  file { '/myfolder/myfile.txt':
+    ensure  => 'file',
+    content => "This is some simple content for the file.\n",
   }
 }
 
