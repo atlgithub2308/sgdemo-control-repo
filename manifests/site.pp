@@ -23,6 +23,18 @@ node 'puppet.se.automationdemos.com' {
     ensure  => 'file',
     content => "my file new content.\n",
   }
+
+  device_manager { 'cisco.example.com':
+    type        => 'cisco_ios',
+    credentials => {
+      address         => 'devnetsandboxiosxe.cisco.com',
+      port            => 22,
+      username        => 'admin',
+      password        => 'C1sco12345',
+      enable_password => 'C1sco12345',
+    },
+  }
+
 }
 
 #node /^agent[\w._%+-]+/ {
