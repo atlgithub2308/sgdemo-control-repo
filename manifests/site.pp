@@ -14,6 +14,8 @@ node default {
 }
 
 node 'puppet.se.automationdemos.com' {
+  
+  include device_manager
 
   user { 'pacificuser1':
     ensure => 'absent',
