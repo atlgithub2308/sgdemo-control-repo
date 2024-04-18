@@ -14,8 +14,6 @@ node default {
 }
 
 node 'puppet.se.automationdemos.com' {
-  
-  include device_manager
 
   user { 'pacificuser1':
     ensure => 'absent',
@@ -24,17 +22,6 @@ node 'puppet.se.automationdemos.com' {
   file { '/myfolder/myfile.txt':
     ensure  => 'file',
     content => "my file new content.\n",
-  }
-
-  device_manager { 'cisco.example.com':
-    type        => 'cisco_ios',
-    credentials => {
-      address         => 'devnetsandboxiosxe.cisco.com',
-      port            => 22,
-      username        => 'admin',
-      password        => 'C1sco12345',
-      enable_password => 'C1sco12345',
-    },
   }
 
 }
