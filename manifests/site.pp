@@ -15,6 +15,8 @@ node default {
 
 node 'puppet.se.automationdemos.com' {
 
+  include cisco_ios
+
   user { 'pacificuser1':
     ensure => 'absent',
   }
