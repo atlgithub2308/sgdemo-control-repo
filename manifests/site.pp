@@ -26,6 +26,12 @@ node 'puppet.se.automationdemos.com' {
 
 }
 
+node 'pacificwin0.se.automationdemos.com' {
+
+  include profile::platform::baseline::firewall
+
+}
+
 
 
 # Uncomment the line below to enable ServiceNow Node Classification
