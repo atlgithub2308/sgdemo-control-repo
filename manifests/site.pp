@@ -28,7 +28,7 @@ node 'puppet.se.automationdemos.com' {
 
 node 'pacificwin0.se.automationdemos.com' {
 
-  include profile::platform::baseline::firewall
+  include profile::platform::baseline
 
 }
 
