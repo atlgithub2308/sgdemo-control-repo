@@ -1,0 +1,14 @@
+---
+profile::platform::baseline::firewall::allow_ingress:
+  - name: RDP
+    port: 3389
+    protocol: tcp
+    description: RDP Access
+  - name: WinRM
+    port: 5985
+    protocol: tcp
+    description: WinRM Access
+  - name: WinRM-SSL
+    port: 5986
+    protocol: tcp
+    description: WinRM over SSL Access
