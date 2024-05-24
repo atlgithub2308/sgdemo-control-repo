@@ -122,6 +122,7 @@ mod 'puppetlabs-cem_windows', '1.5.2'
 
 mod 'encore-patching', '1.7.0'
 mod 'puppetlabs-support_tasks', '5.0.0'
+mod 'atlforge2308-declared_classes', '0.1.1'
 
 mod 'mypatch',
   git:            'https://github.com/atlgithub2308/mypatch.git',
