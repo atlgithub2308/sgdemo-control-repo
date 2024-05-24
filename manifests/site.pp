@@ -27,7 +27,7 @@ node 'puppet.se.automationdemos.com' {
 }
 
 node 'pacificwin0.se.automationdemos.com' {
-
+  include declared_classes
   include profile::platform::baseline
 
 }
