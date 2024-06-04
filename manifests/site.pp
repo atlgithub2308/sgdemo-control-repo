@@ -16,7 +16,7 @@ node default {
 node 'puppet.se.automationdemos.com' {
   include declared_classes
   user { 'pacificuser1':
-    ensure => 'absent',
+    ensure => 'present',
   }
 
   file { '/myfolder/myfile.txt':
