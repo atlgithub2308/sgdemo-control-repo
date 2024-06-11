@@ -13,26 +13,5 @@ node default {
   }
 }
 
-node 'puppet.se.automationdemos.com' {
-  include declared_classes
-  user { 'pacificuser1':
-    ensure => 'present',
-  }
-
-  file { '/myfolder/myfile.txt':
-    ensure  => 'file',
-    content => "my file new content.\n",
-  }
-
-}
-
-node 'pacificwin0.se.automationdemos.com' {
-  include declared_classes
-  include profile::platform::baseline
-
-}
-
-
-
 # Uncomment the line below to enable ServiceNow Node Classification
 # include servicenow_cmdb_integration::classification
