@@ -119,6 +119,8 @@ mod 'netstat',
     ref: '64bcee0'
 #mod 'puppetlabs-cem_linux', '1.9.1'
 #mod 'puppetlabs-cem_windows', '1.5.2'
+mod 'puppetlabs-sce_linux', '2.0.0'
+mod 'puppetlabs-sce_windows', '2.0.0'
 
 mod 'encore-patching', '1.7.0'
 mod 'puppetlabs-support_tasks', '5.0.0'
