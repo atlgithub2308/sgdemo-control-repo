@@ -5,6 +5,9 @@ sce_linux::config:
   only:
     - 'ensure_aide_is_installed'
     - 'Ensure password expiration is 365 days or less'
+  control_configs:
+    "Ensure password expiration is 365 days or less":
+      pass_max_days: 500
 
 
 
