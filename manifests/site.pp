@@ -14,7 +14,7 @@ node default {
 }
 
 node 'sgdemope.atl88.online' {
-  #include sce_linux
+  include sce_linux
 }
 
 # Uncomment the line below to enable ServiceNow Node Classification
