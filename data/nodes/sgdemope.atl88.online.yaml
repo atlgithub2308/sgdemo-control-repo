@@ -8,11 +8,3 @@ sce_linux::config:
   control_configs:
     "Ensure password expiration is 365 days or less":
       pass_max_days: 500
-
-
-
-
-#sce_linux::config:
-#  control_configs:
-#    "Ensure password expiration is 365 days or less":
-#      pass_max_days: 365
