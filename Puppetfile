@@ -135,3 +135,7 @@ mod 'myhealthcheck',
   git:            'https://github.com/atlgithub2308/myhealthcheck.git',
   branch:         :control_branch,
   default_branch: 'production'
+
+mod 'tamcheck',
+  :git => 'https://github.com/coffeeales/tamcheck.git'
+  :branch => 'teckleong'
