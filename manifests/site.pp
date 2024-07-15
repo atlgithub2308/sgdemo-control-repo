@@ -14,8 +14,13 @@ node default {
 }
 
 node 'sgdemope.atl88.online' {
+  #include sce_linux
+}
+
+node 'sgdemorocky1.atl88.online' {
   include sce_linux
 }
+
 
 # Uncomment the line below to enable ServiceNow Node Classification
 # include servicenow_cmdb_integration::classification
