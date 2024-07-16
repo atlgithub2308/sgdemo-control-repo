@@ -19,7 +19,7 @@ node 'sgdemope.atl88.online' {
 
 
 node 'sgdemorocky1.atl88.online' {
-  include sce_linux
+  #include sce_linux
 }
 
 
