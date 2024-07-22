@@ -20,3 +20,7 @@ node 'sgdemope.atl88.online' {
 node 'sgdemorocky1.atl88.online' {
   include sce_linux
 }
+
+node 'sgdemowin1.atl88.online' {
+  include sce_windows
+}

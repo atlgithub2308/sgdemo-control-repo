@@ -1,0 +1,9 @@
+sce_windows::benchmark: 'cis'
+sce_windows::config:
+  profile: 'member_server'
+  level: '1'
+  only:
+    - 'Ensure password expiration is 365 days or less'
+  control_configs:
+    "Ensure password expiration is 365 days or less":
+      pass_max_days: 365
