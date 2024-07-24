@@ -23,6 +23,10 @@ node 'sgdemorocky1.atl88.online' {
   user { 'user1':
     ensure => 'absent',
   }
+
+  package { 'telnet':
+    ensure => present,
+  }
 }
 
 node 'sgdemowin1.atl88.online' {
