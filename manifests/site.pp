@@ -21,7 +21,7 @@ node 'sgdemorocky1.atl88.online' {
   include sce_linux
 
   user { 'user1':
-    ensure => 'present',
+    ensure => 'absent',
   }
 }
 
