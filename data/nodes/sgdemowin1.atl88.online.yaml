@@ -3,7 +3,12 @@ sce_windows::config:
   profile: 'member_server'
   level: '1'
   only:
-    - 'Ensure password expiration is 365 days or less'
+    - "(L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0'"
+    - "(L1) Ensure 'Allow log on locally' is set to 'Administrators'"
   control_configs:
-    "Ensure password expiration is 365 days or less":
-      pass_max_days: 365
+    "(L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0'":
+      dsc_maximum_password_age: 500
+    "(L1) Ensure 'Allow log on locally' is set to 'Administrators'":
+      users: ["Builtin\\Administrators"]
+      dsc_policy: "Allow_log_on_locally"
+      dsc_force: false
