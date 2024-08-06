@@ -1,5 +1,3 @@
-sce_windows::allow_local_account_rdp: true
-
 sce_windows::benchmark: 'cis'
 sce_windows::config:
   profile: 'member_server'
