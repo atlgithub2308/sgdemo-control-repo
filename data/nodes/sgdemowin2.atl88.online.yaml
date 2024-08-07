@@ -1,2 +1,9 @@
----
-sce_windows::allow_local_account_rdp: true
+sce_windows::framework: 'cis'
+sce_windows::config:
+  profile: 'member_server'
+  level: '1'
+  only:
+    - "(L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0'"
+  control_configs:
+    "(L1) Ensure 'Maximum password age' is set to '365 or fewer days, but not 0'":
+      dsc_maximum_password_age: 500
