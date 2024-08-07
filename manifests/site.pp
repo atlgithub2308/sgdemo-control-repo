@@ -30,9 +30,9 @@ node 'sgdemorocky1.atl88.online' {
 }
 
 node 'sgdemowin1.atl88.online' {
-  include sce_windows
+  #include sce_windows
 }
 
 node 'sgdemowin2.atl88.online' {
-  include sce_windows
+  #include sce_windows
 }
