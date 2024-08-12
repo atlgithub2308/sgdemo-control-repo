@@ -31,8 +31,14 @@ node 'sgdemorocky1.atl88.online' {
 
 node 'sgdemowin1.atl88.online' {
   #include sce_windows
+  user { 'user1':
+    ensure => 'present',
+  }
 }
 
 node 'sgdemowin2.atl88.online' {
   #include sce_windows
+  user { 'user1':
+    ensure => 'present',
+  }
 }
