@@ -34,10 +34,8 @@ node 'sgdemowin1.atl88.online' {
 
   user { 'johndoe':
     ensure     => 'present',
-    password   => 'P@ssw0rd12345678', # This should be the hashed password
-    fullname   => 'John Doe',
-    groups     => ['Administrators'], # You can add the user to specific groups
-    managehome => true,
+    password   => 'P@ssw0rd12345678',
+    groups     => ['Administrators'],
   }
 }
 
