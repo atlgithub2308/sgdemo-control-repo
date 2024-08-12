@@ -31,14 +31,16 @@ node 'sgdemorocky1.atl88.online' {
 
 node 'sgdemowin1.atl88.online' {
   #include sce_windows
-  user { ['user1', 'user2']:
-    ensure => 'present',
+
+  user { 'johndoe':
+    ensure     => 'present',
+    password   => 'P@ssw0rd12345678', # This should be the hashed password
+    fullname   => 'John Doe',
+    groups     => ['Administrators'], # You can add the user to specific groups
+    managehome => true,
   }
 }
 
 node 'sgdemowin2.atl88.online' {
   #include sce_windows
-  user { 'user1':
-    ensure => 'present',
-  }
 }
