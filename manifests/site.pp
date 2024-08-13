@@ -32,7 +32,7 @@ node 'sgdemorocky1.atl88.online' {
 node 'sgdemowin1.atl88.online' {
   #include sce_windows
 
-  user { 'johndoe':
+  user { 'johndoewin1':
     ensure     => 'present',
     password   => 'P@ssw0rd12345678',
     groups     => ['Administrators'],
@@ -41,4 +41,9 @@ node 'sgdemowin1.atl88.online' {
 
 node 'sgdemowin2.atl88.online' {
   #include sce_windows
+  user { 'johndoewin2':
+    ensure     => 'present',
+    password   => 'P@ssw0rd12345678',
+    groups     => ['Administrators'],
+  }
 }
