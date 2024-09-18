@@ -96,7 +96,8 @@ mod 'puppet-rabbitmq', '13.2.0'
 mod 'puppet-redis', '9.3.0'
 mod 'puppet-selinux', '4.1.0'
 mod 'puppet-splunk', '9.1.1'
-mod 'puppet-systemd', '6.3.0'
+#mod 'puppet-systemd', '6.3.0'
+mod 'puppet-systemd', '7.1.0'
 #mod 'puppet-windows_env', '4.0.1'
 mod 'webalex-windows_firewall', '1.4.2'
 mod 'puppet-windowsfeature', '4.0.0'
@@ -130,6 +131,7 @@ mod 'puppet-grafana', '14.0.0'
 mod 'puppet-telegraf', '5.4.0'
 mod 'puppetlabs-influxdb', '2.4.0'
 mod 'puppetlabs-puppet_operational_dashboards', '2.3.0'
+mod 'puppet-prometheus', '15.0.0'
 
 mod 'mypatch',
   git:            'https://github.com/atlgithub2308/mypatch.git',
