@@ -34,7 +34,6 @@ mod 'saz-limits', '3.1.0'
 mod 'puppetlabs-motd', '7.1.0'
 mod 'puppetlabs-mount_iso', '4.0.3' # Needs updated to support powershell 4.0.0
 #mod 'puppetlabs-netdev_stdlib', '0.23.0'
-mod 'puppetlabs-stdlib', '9.6.0'
 mod 'puppetlabs-ntp', '10.1.0'
 mod 'puppetlabs-panos', '2.0.0'
 mod 'puppetlabs-powershell', '6.0.0'
