@@ -33,7 +33,8 @@ mod 'puppetlabs-java', '10.1.2'
 mod 'saz-limits', '3.1.0'
 mod 'puppetlabs-motd', '7.1.0'
 mod 'puppetlabs-mount_iso', '4.0.3' # Needs updated to support powershell 4.0.0
-mod 'puppetlabs-netdev_stdlib', '0.23.0'
+#mod 'puppetlabs-netdev_stdlib', '0.23.0'
+mod 'puppetlabs-stdlib', '9.6.0'
 mod 'puppetlabs-ntp', '10.1.0'
 mod 'puppetlabs-panos', '2.0.0'
 mod 'puppetlabs-powershell', '6.0.0'
@@ -125,6 +126,10 @@ mod 'puppetlabs-sce_windows', '2.0.0'
 mod 'encore-patching', '1.7.0'
 mod 'puppetlabs-support_tasks', '5.0.0'
 mod 'atlforge2308-declared_classes', '0.1.1'
+
+mod 'puppet-grafana', '14.0.0'
+mod 'puppet-telegraf', '5.4.0'
+mod 'puppetlabs-influxdb', '2.4.0'
 
 mod 'mypatch',
   git:            'https://github.com/atlgithub2308/mypatch.git',
