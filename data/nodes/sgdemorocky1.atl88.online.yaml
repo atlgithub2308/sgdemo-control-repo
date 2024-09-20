@@ -34,7 +34,7 @@ prometheus::scrape_configs:
     scrape_timeout: '10s'
     static_configs:
       - targets:
-          - 'localhost:9090'
+          - 'sgdemorocky1.atl88.online:9090'
         labels:
           alias: 'Prometheus1'
   - job_name: 'sgdemodebian1'
