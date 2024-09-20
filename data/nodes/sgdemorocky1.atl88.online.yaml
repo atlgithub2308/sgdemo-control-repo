@@ -9,3 +9,46 @@ sce_linux::config:
   control_configs:
     "Ensure password expiration is 365 days or less":
       pass_max_days: 365
+
+prometheus::manage_prometheus_server: true
+
+prometheus::version: '2.52.0'
+
+prometheus::alerts:
+  groups:
+    - name: 'alert.rules'
+      rules:
+        - alert: 'InstanceDown'
+          expr: 'up == 0'
+          for: '5m'
+          labels:
+            severity: 'page'
+          annotations:
+            summary: 'Instance {{ $labels.instance }} down'
+            description: '{{ $labels.instance }} of job {{ $labels.job }} has been
+              down for more than 5 minutes.'
+
+prometheus::scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - 'localhost:9090'
+        labels:
+          alias: 'Prometheus'
+  - job_name: 'sgdemodebian1'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - 'sgdemodebian1.atl88.online:9100'
+        labels:
+          alias: 'sgdemodebian1'
+
+prometheus::alertmanagers_config:
+  - static_configs:
+      - targets:
+          - 'localhost:9093'
+
+prometheus::alertmanager::version: '0.27.0'

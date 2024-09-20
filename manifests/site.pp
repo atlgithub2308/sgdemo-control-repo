@@ -19,7 +19,7 @@ node 'sgdemope.atl88.online' {
 
 node 'sgdemorocky1.atl88.online' {
   include sce_linux
-
+  include prometheus
   user { 'user1':
     ensure => 'present',
   }
@@ -31,7 +31,7 @@ node 'sgdemorocky1.atl88.online' {
 
 node 'sgdemodebian1.atl88.online' {
   class { 'prometheus::node_exporter':
-    version            => '0.27.0',
+    version            => '1.8.2',
     collectors_disable => ['loadavg', 'mdadm'],
   }
 }
