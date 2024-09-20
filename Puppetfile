@@ -127,7 +127,7 @@ mod 'encore-patching', '1.7.0'
 mod 'puppetlabs-support_tasks', '5.0.0'
 mod 'atlforge2308-declared_classes', '0.1.1'
 
-mod 'puppet-grafana', '14.0.0'
+mod 'puppet-grafana', '14.1.0'
 mod 'puppet-telegraf', '5.4.0'
 mod 'puppetlabs-influxdb', '2.4.0'
 mod 'puppetlabs-puppet_operational_dashboards', '2.3.0'
