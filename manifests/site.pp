@@ -29,6 +29,13 @@ node 'sgdemorocky1.atl88.online' {
   }
 }
 
+node 'sgdemodebian1.atl88.online' {
+  class { 'prometheus::node_exporter':
+    version            => '0.27.0',
+    collectors_disable => ['loadavg', 'mdadm'],
+  }
+}
+
 node 'sgdemowin1.atl88.online' {
   #include sce_windows
 
