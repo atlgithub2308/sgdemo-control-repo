@@ -37,14 +37,15 @@ prometheus::scrape_configs:
           - 'sgdemorocky1.atl88.online:9090'
         labels:
           alias: 'Prometheus1'
-  - job_name: 'sgdemodebian1'
+  
+  - job_name: 'sgdemope'
     scrape_interval: '10s'
     scrape_timeout: '10s'
     static_configs:
       - targets:
-          - 'sgdemodebian1.atl88.online:9100'
+          - 'sgdemope.atl88.online:9100'
         labels:
-          alias: 'sgdemodebian1'
+          alias: 'sgdemope'
 
 prometheus::alertmanagers_config:
   - static_configs:
