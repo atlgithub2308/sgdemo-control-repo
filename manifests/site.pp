@@ -15,6 +15,9 @@ node default {
 
 node 'sgdemope.atl88.online' {
   #include sce_linux
+  class { 'puppet_data_connector':
+    dropzone => '/opt/puppetlabs/puppet/puppet_data_connector',
+  }
 }
 
 node 'sgdemorocky1.atl88.online' {
