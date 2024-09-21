@@ -29,14 +29,14 @@ prometheus::alerts:
               down for more than 5 minutes.'
 
 prometheus::scrape_configs:
-  - job_name: 'prometheus'
+  - job_name: 'prometheus1'
     scrape_interval: '10s'
     scrape_timeout: '10s'
     static_configs:
       - targets:
           - 'sgdemorocky1.atl88.online:9090'
         labels:
-          alias: 'Prometheus'
+          alias: 'Prometheus1'
   
   - job_name: 'sgdemope'
     scrape_interval: '10s'
