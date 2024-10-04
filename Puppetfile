@@ -147,5 +147,5 @@ mod 'myhealthcheck',
 mod 'tamcheck',
   git:            'https://github.com/atlgithub2308/tamcheck.git',
   branch:         :control_branch,
-  default_branch: 'main'
+  default_branch: 'production'
 
