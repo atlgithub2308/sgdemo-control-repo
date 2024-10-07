@@ -125,7 +125,7 @@ mod 'puppetlabs-sce_windows', '2.0.0'
 
 mod 'encore-patching', '1.7.0'
 mod 'puppetlabs-support_tasks', '5.0.0'
-mod 'atlforge2308-declared_classes', '0.1.1'
+#mod 'atlforge2308-declared_classes', '0.1.1'
 
 mod 'puppet-grafana', '14.0.0'
 mod 'puppet-telegraf', '5.4.0'
