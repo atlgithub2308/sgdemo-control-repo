@@ -1,0 +1,35 @@
+
+webserver::html_content: |
+  <html>
+    <head>
+      <meta charset='UTF-8'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <title>Welcome to Puppet Web Server - sgdemope</title>
+      <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f0f0f0;
+          color: #333;
+          text-align: center;
+          padding: 20px;
+        }
+        h1 {
+          color: #0056b3;
+          font-size: 2.5em;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+          margin-top: 20px;
+          font-size: 14px;
+          color: #888;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Welcome ICIC Bank to Puppet World</h1>
+      <p>This is a dynamically generated page using Puppet and Hiera.</p>
+      <div class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+      </div>
+    </body>
+  </html>

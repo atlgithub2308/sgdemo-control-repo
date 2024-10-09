@@ -62,86 +62,78 @@ node 'sgdemowin2.atl88.online' {
 }
 
 node 'sgdemorocky2.atl88.online' {
-# Ensure the httpd package is installed
-  package { 'httpd':
-    ensure => installed,
-  }
+# webserver.pp
 
-# Ensure the Apache service is enabled and running
-  service { 'httpd':
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    require    => Package['httpd'],
-  }
+# Determine the package and service names based on the operating system
+  class webserver {
+    case $facts['os']['family'] {
+      'Debian': {
+        $package_name = 'apache2'
+        $service_name = 'apache2'
+        $doc_root = '/var/www/html'
+      }
+      'RedHat': {
+        $package_name = 'httpd'
+        $service_name = 'httpd'
+        $doc_root = '/var/www/html'
+      }
+      'windows': {
+        # Windows configuration: install IIS Web-Server feature
+        $package_name = 'Web-Server'
+        $service_name = 'w3svc'
+        $doc_root = 'C:/inetpub/wwwroot'
+      }
+      default: {
+        fail("Unsupported OS: ${facts['os']['family']}")
+      }
+    }
 
-# Ensure the document root directory exists
-  file { '/var/www/html':
-    ensure => directory,
-  }
+    # Ensure the web server package is installed
+    package { $package_name:
+      ensure => installed,
+    }
 
-# Create a simple index.html file
-  file { '/var/www/html/index.html':
-    ensure  => file,
-    content => "<html>
-                <head>
-                  <meta charset='UTF-8'>
-                  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                  <title>Welcome to Rocky Linux Web Server</title>
-                  <style>
-                    body {
-                      font-family: 'Arial', sans-serif;
-                      background-color: #f4f4f4;
-                      color: #333;
-                      margin: 0;
-                      padding: 20px;
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                    }
-                    h1 {
-                      color: #007bff;
-                      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-                    }
-                    p {
-                      font-size: 18px;
-                    }
-                    .card {
-                      background: white;
-                      border-radius: 8px;
-                      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                      padding: 20px;
-                      max-width: 600px;
-                      text-align: center;
-                      margin-top: 20px;
-                    }
-                    .footer {
-                      margin-top: 20px;
-                      font-size: 14px;
-                      color: #888;
-                    }
-                  </style>
-                </head>
-                <body>
-                  <h1>Welcome ICICbank to Puppet World!</h1>
-                  <div class='card'>
-                    <p>Congratulations! Your web server is up and running smoothly.</p>
-                    <p>This server is powered by <strong>Apache</strong> on <strong>Rocky Linux</strong>.</p>
-                    <p>Explore and enjoy your new server!</p>
-                  </div>
-                  <div class='footer'>
-                    <p>&copy; 2024 Your Company. All rights reserved.</p>
-                  </div>
-                </body>
-              </html>",
-    mode    => '0644',
-    require => Package['httpd'],
-  }
+    # Ensure the web server service is enabled and running
+    service { $service_name:
+      ensure     => running,
+      enable     => true,
+      hasrestart => true,
+      require    => Package[$package_name],
+    }
 
-# Open port 80 for HTTP traffic (if using firewalld)
-  exec { 'firewalld-allow-http':
-    command => '/usr/bin/firewall-cmd --permanent --add-service=http && /usr/bin/firewall-cmd --reload',
-    unless  => '/usr/bin/firewall-cmd --list-all | grep http',
-    require => Service['httpd'],
+    # Ensure the document root exists (for Linux systems)
+    if $facts['os']['family'] != 'windows' {
+      file { $doc_root:
+        ensure => directory,
+      }
+    }
+
+    # Retrieve HTML content from Hiera and create index.html
+    $html_content = lookup('webserver::html_content')
+
+    file { "${doc_root}/index.html":
+      ensure  => file,
+      content => $html_content,
+      mode    => '0644',
+      require => Package[$package_name],
+    }
+
+    # Windows-specific firewall rule
+    if $facts['os']['family'] == 'windows' {
+     exec { 'open-port-80':
+        command => 'netsh advfirewall firewall add rule name="HTTP" dir=in action=allow protocol=TCP localport=80',
+        onlyif  => 'netsh advfirewall firewall show rule name="HTTP" | findstr /I "No rules"',
+        require => Service[$service_name],
+      }
+    }
+
+    # Firewall rules for Linux (Debian/RedHat)
+    if $facts['os']['family'] != 'windows' {
+      exec { 'open-http-port':
+        command => '/usr/sbin/ufw allow http',
+        unless  => '/usr/sbin/ufw status | grep "80/tcp"',
+        require => Service[$service_name],
+      }
+    }
   }
 }
