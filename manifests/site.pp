@@ -32,6 +32,10 @@ node 'sgdemorocky1.atl88.online' {
   }
 }
 
+node 'sgdemorocky2.atl88.online' {
+  include profile::app::sample_website::linux
+}
+
 node 'sgdemodebian1.atl88.online' {
   class { 'prometheus::node_exporter':
     version            => '1.8.2',
