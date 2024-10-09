@@ -1,4 +1,4 @@
-class webserver {
+class webserver1 {
   # Define variables to accommodate different OS families
   case $facts['os']['family'] {
     'RedHat', 'Rocky': {
