@@ -33,7 +33,7 @@ node 'sgdemorocky1.atl88.online' {
 }
 
 node 'sgdemorocky2.atl88.online' {
-  include profile::app::sample_website::linux
+  include profile::app::sample_website
 }
 
 node 'sgdemodebian1.atl88.online' {
