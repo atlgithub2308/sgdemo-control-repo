@@ -123,7 +123,7 @@ node 'sgdemorocky2.atl88.online' {
                     </style>
                   </head>
                   <body>
-                    <h1>Welcome to Your Rocky Linux Web Server!</h1>
+                    <h1>Welcome ICIC bank to Puppet World!</h1>
                     <div class='card'>
                       <p>Congratulations! Your web server is up and running smoothly.</p>
                       <p>This server is powered by <strong>Apache</strong> on <strong>Rocky Linux</strong>.</p>
