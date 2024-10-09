@@ -37,7 +37,7 @@ node 'sgdemorocky2.atl88.online' {
 }
 
 node 'sgdemodebian2.atl88.online' {
-  include profile::app::sample_website
+  include profile::app::puppet_tomcat
 }
 
 node 'sgdemodebian1.atl88.online' {
