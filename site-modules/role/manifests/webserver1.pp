@@ -1,3 +1,4 @@
+#create a web server
 class webserver1 {
   # Define variables to accommodate different OS families
   case $facts['os']['family'] {
