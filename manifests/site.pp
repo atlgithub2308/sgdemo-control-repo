@@ -85,10 +85,53 @@ node 'sgdemorocky2.atl88.online' {
     ensure  => file,
     content => "<html>
                 <head>
-                  <title>Welcome to Puppet Demo for ICIC Bankr</title>
+                  <meta charset='UTF-8'>
+                  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                  <title>Welcome to Rocky Linux Web Server</title>
+                  <style>
+                    body {
+                      font-family: 'Arial', sans-serif;
+                      background-color: #f4f4f4;
+                      color: #333;
+                      margin: 0;
+                      padding: 20px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    }
+                    h1 {
+                      color: #007bff;
+                      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                    }
+                    p {
+                      font-size: 18px;
+                    }
+                    .card {
+                      background: white;
+                      border-radius: 8px;
+                      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                      padding: 20px;
+                      max-width: 600px;
+                      text-align: center;
+                      margin-top: 20px;
+                    }
+                    .footer {
+                      margin-top: 20px;
+                      font-size: 14px;
+                      color: #888;
+                    }
+                  </style>
                 </head>
                 <body>
-                  <h1>Hello ICIC Bank </h1>
+                  <h1>Welcome to ICICbank to Puppet World!</h1>
+                  <div class='card'>
+                    <p>Congratulations! Your web server is up and running smoothly.</p>
+                    <p>This server is powered by <strong>Apache</strong> on <strong>Rocky Linux</strong>.</p>
+                    <p>Explore and enjoy your new server!</p>
+                  </div>
+                  <div class='footer'>
+                    <p>&copy; 2024 Your Company. All rights reserved.</p>
+                  </div>
                 </body>
               </html>",
     mode    => '0644',
