@@ -32,10 +32,6 @@ node 'sgdemorocky1.atl88.online' {
   }
 }
 
-node 'sgdemorocky2.atl88.online' {
-  #include role::sample_website
-}
-
 node 'sgdemodebian2.atl88.online' {
 }
 
@@ -62,5 +58,47 @@ node 'sgdemowin2.atl88.online' {
     ensure     => 'present',
     password   => 'P@ssw0rd12345678',
     groups     => ['Administrators'],
+  }
+}
+
+node 'sgdemorocky2.atl88.online' {
+# Ensure the httpd package is installed
+  package { 'httpd':
+    ensure => installed,
+  }
+
+# Ensure the Apache service is enabled and running
+  service { 'httpd':
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    require    => Package['httpd'],
+  }
+
+# Ensure the document root directory exists
+  file { '/var/www/html':
+    ensure => directory,
+  }
+
+# Create a simple index.html file
+  file { '/var/www/html/index.html':
+    ensure  => file,
+    content => "<html>
+                <head>
+                  <title>Welcome to Puppet Demo for ICIC Bankr</title>
+                </head>
+                <body>
+                  <h1>Hello ICIC Bank </h1>
+                </body>
+              </html>",
+    mode    => '0644',
+    require => Package['httpd'],
+  }
+
+# Open port 80 for HTTP traffic (if using firewalld)
+  exec { 'firewalld-allow-http':
+    command => '/usr/bin/firewall-cmd --permanent --add-service=http && /usr/bin/firewall-cmd --reload',
+    unless  => '/usr/bin/firewall-cmd --list-all | grep http',
+    require => Service['httpd'],
   }
 }
