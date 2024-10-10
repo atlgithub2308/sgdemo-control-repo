@@ -59,6 +59,11 @@ node 'sgdemowin1.atl88.online' {
     ensure  => 'file',
     content => 'Welcome to Puppet',
   }
+
+  package { 'GoogleChrome':
+    ensure   => 'installed',
+    provider => 'chocolatey',
+  }
 }
 
 node 'sgdemowin2.atl88.online' {
@@ -75,7 +80,6 @@ node 'sgdemowin2.atl88.online' {
     unless    => 'choco -v',
     logoutput => true,
   }
-
 
   package { 'GoogleChrome':
     ensure   => 'installed',
