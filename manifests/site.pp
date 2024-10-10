@@ -68,6 +68,19 @@ node 'sgdemowin2.atl88.online' {
     password   => 'P@ssw0rd12345678',
     groups     => ['Administrators'],
   }
+
+  exec { 'install_chocolatey':
+    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString(''https://chocolatey.org/install.ps1''))',
+    provider  => 'powershell',
+    unless    => 'choco -v',
+    logoutput => true,
+  }
+
+  package { 'GoogleChrome':
+    ensure   => 'installed',
+    provider => 'chocolatey',
+    require  => Exec['install_chocolatey'],  # Ensures Chocolatey is installed before installing Chrome
+  }
 }
 
 node 'sgdemorocky2.atl88.online' {
