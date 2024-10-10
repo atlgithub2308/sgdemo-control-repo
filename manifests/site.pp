@@ -70,11 +70,12 @@ node 'sgdemowin2.atl88.online' {
   }
 
   exec { 'install_chocolatey':
-    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString(''https://chocolatey.org/install.ps1''))',
+    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString(\'https://community.chocolatey.org/install.ps1\'))',
     provider  => 'powershell',
     unless    => 'choco -v',
     logoutput => true,
   }
+
 
   package { 'GoogleChrome':
     ensure   => 'installed',
