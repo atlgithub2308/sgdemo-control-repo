@@ -50,6 +50,15 @@ node 'sgdemowin1.atl88.online' {
     password   => 'P@ssw0rd12345678',
     groups     => ['Administrators'],
   }
+
+  file { 'C:/mydir':
+    ensure => 'directory',
+  }
+
+  file { 'C:/mydir/myfile':
+    ensure  => 'file',
+    content => 'Welcome to Puppet',
+  }
 }
 
 node 'sgdemowin2.atl88.online' {
