@@ -15,6 +15,7 @@ node default {
 
 node 'sgdemope.atl88.online' {
   #include sce_linux
+  include ansible_config::ansible_host
   class { 'puppet_data_connector':
     dropzone => '/opt/puppetlabs/puppet/puppet_data_connector',
   }
