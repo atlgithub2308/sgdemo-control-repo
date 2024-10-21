@@ -42,6 +42,10 @@ node 'sgdemodebian1.atl88.online' {
   }
 }
 
+node 'sgdemodebian2.atl88.online' {
+  include ansible_config::ansible_host
+}
+
 node 'sgdemowin1.atl88.online' {
   #include sce_windows
 
