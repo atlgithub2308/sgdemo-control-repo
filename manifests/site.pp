@@ -32,9 +32,6 @@ node 'sgdemorocky1.atl88.online' {
   }
 }
 
-node 'sgdemodebian2.atl88.online' {
-}
-
 node 'sgdemodebian1.atl88.online' {
   class { 'prometheus::node_exporter':
     version            => '1.8.2',
