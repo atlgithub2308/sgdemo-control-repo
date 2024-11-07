@@ -64,6 +64,11 @@ node 'sgdemowin1.atl88.online' {
     ensure   => 'installed',
     provider => 'chocolatey',
   }
+
+  package { 'firefox':
+    ensure   => 'installed',
+    provider => 'chocolatey',
+  }
 }
 
 node 'sgdemowin2.atl88.online' {
