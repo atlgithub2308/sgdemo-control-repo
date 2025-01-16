@@ -107,7 +107,7 @@ node 'sgdemorocky2.atl88.online' {
 # Create a more fanciful index.html file
   file { '/var/www/html/index.html':
     ensure  => file,
-    content => 'puppet:///files/index.html',
+    source => 'puppet:///files/index.html',
     mode    => '0644',
     require => Package['httpd'],
   }
