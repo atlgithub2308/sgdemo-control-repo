@@ -87,7 +87,7 @@ node 'sgdemowin2.atl88.online' {
 
 node 'sgdemorocky2.atl88.online' {
 
- # $index_html_content = hiera('web::index_html')
+ $index_html_content = hiera('web::index_html')
 # Ensure the httpd package is installed
   package { 'httpd':
     ensure => installed,
@@ -109,7 +109,7 @@ node 'sgdemorocky2.atl88.online' {
 # Create a more fanciful index.html file
   file { '/var/www/html/index.html':
     ensure  => file,
-    content => 'hello',
+    content => $index_html_content,
     mode    => '0644',
     require => Package['httpd'],
   }
