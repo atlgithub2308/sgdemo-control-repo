@@ -1,5 +1,6 @@
 # /etc/puppetlabs/code/environments/production/data/common.yaml or node-specific.yaml
-web::index_html: |
+#web::index_html: |
+index_html_content: |
   <html>
     <head>
       <meta charset='UTF-8'>
