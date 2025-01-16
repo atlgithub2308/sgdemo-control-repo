@@ -69,7 +69,7 @@ mod 'bodgit-rngd', '3.0.1'
 mod 'computology-packagecloud', '0.3.2'
 mod 'crayfishx-purge', '1.2.1'
 mod 'ghoneycutt-ssh', '5.0.0'
-mod 'herculesteam-augeasproviders_core', '3.1.0'
+#mod 'herculesteam-augeasproviders_core', '3.1.0'
 #mod 'herculesteam-augeasproviders_ssh', '4.0.0'
 mod 'hunner-wordpress', '1.0.0'
 mod 'ipcrm-echo', '0.1.8'
@@ -87,7 +87,7 @@ mod 'puppet-firewalld',     # Using a custom fork of the firewalld for proper pa
 
 mod 'puppet-gitlab', '8.1.0'
 mod 'puppet-hiera', '5.0.1'
-mod 'puppet-jenkins', '4.0.0' # Do we need this, it is out of date and requires java < 5.0.0, and zypprepo
+mod 'puppet-jenkins', '6.0.0' # Do we need this, it is out of date and requires java < 5.0.0, and zypprepo
 mod 'puppet-logrotate', '7.0.1'
 mod 'puppet-nginx', '5.0.0'
 mod 'puppet-php', '10.1.0' # Requires zypprepo
