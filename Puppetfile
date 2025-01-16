@@ -62,8 +62,8 @@ mod 'puppetlabs-puppet_agent', :latest
 
 # Forge Community Modules
 mod 'puppet-yum', '7.1.0'  # Required for the CD4PE workshop
-mod 'WhatsARanjit-diskspace', '0.2.0'
-mod 'WhatsARanjit-node_manager', '0.8.0'
+#mod 'WhatsARanjit-diskspace', '0.2.0'
+#mod 'WhatsARanjit-node_manager', '0.8.0'
 mod 'ayohrling-local_security_policy', '1.1.1'
 mod 'bodgit-rngd', '3.0.1'
 mod 'computology-packagecloud', '0.3.2'
