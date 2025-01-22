@@ -27,6 +27,10 @@ node 'sgdemorocky1.atl88.online' {
     ensure => 'present',
   }
 
+  user { 'user2':
+    ensure => 'present',
+  }
+
   package { 'telnet':
     ensure => present,
   }
