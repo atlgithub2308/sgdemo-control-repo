@@ -54,7 +54,7 @@ class profile::mssql_install {
 
   # Install MSSQL Server only if it's not already installed
   exec { 'Install SQL Server':
-    command   => "${sql_server_install_path} /ConfigurationFile=${sql_server_config_file}",
+    command   => "${sql_server_install_path} /ConfigurationFile=${sql_server_config_file} /QUIET /IACCEPTSQLSERVERLICENSETERMS",
     provider  => powershell,
     logoutput => true,
     unless    => "if ((Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\Instance Names\\SQL').MSSQLSERVER) { exit 0 } else { exit 1 }",
@@ -71,10 +71,10 @@ class profile::mssql_install {
   }
 
   # Ensure the MSSQL service is running and set to automatic startup
-  service { 'MSSQLSERVER':
-    ensure     => 'running',
-    enable     => true,
-    hasrestart => true,
-    require    => Exec['Install SQL Server'],
-  }
+  #service { 'MSSQLSERVER':
+  #  ensure     => 'running',
+  #  enable     => true,
+  #  hasrestart => true,
+  #  require    => Exec['Install SQL Server'],
+  #}
 }
