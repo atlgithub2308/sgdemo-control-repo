@@ -16,21 +16,21 @@ class profile::mssql_install {
   # Create the SQL Server configuration file with default values
   file { $sql_server_config_file:
     ensure  => 'file',
-    content => @("CONFIGFILE"
-;SQL Server Configuration File
-[OPTIONS]
-ACTION="Install"
-ENU="True"
-FEATURES="SQLENGINE"
-INSTANCENAME="MSSQLSERVER"
-SQLSVCACCOUNT="NT AUTHORITY\\SYSTEM"
-AGTSVCACCOUNT="NT AUTHORITY\\SYSTEM"
-SQLSYSADMINACCOUNTS="BUILTIN\\ADMINISTRATORS"
-SECURITYMODE="SQL"
-SAPWD="YourStrong!Password"
-IACCEPTSQLSERVERLICENSETERMS="True"
-| CONFIGFILE
-    ),
+    content => @("CONFIGFILE")
+      SQL Server Configuration File
+      [OPTIONS]
+      ACTION="Install"
+      ENU="True"
+      FEATURES="SQLENGINE"
+      INSTANCENAME="MSSQLSERVER"
+      SQLSVCACCOUNT="NT AUTHORITY\\SYSTEM"
+      AGTSVCACCOUNT="NT AUTHORITY\\SYSTEM"
+      SQLSYSADMINACCOUNTS="BUILTIN\\ADMINISTRATORS"
+      SECURITYMODE="SQL"
+      SAPWD="YourStrong!Password"
+      IACCEPTSQLSERVERLICENSETERMS="True"
+    CONFIGFILE
+    ,
     require => File['C:\Installers'],
   }
 
