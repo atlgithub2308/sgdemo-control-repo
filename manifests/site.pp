@@ -52,7 +52,7 @@ node 'sgdemorocky3.atl88.online' {
   service { ['httpd', 'chronyd']:
     ensure    => running,
     enable    => true,
-    require   => Package['httpd', 'chronyd'],
+    require   => Package['httpd', 'chrony'],
   }
 }
 
