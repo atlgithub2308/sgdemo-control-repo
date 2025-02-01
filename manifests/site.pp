@@ -45,7 +45,7 @@ node 'sgdemorocky3.atl88.online' {
   user { 'user1':
     ensure => 'present',
   }
-  package { ['httpd', 'chronyd']:
+  package { ['httpd', 'chrony']:
     ensure => installed,
   }
 
