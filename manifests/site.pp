@@ -40,6 +40,22 @@ node 'sgdemorocky1.atl88.online' {
   }
 }
 
+node 'sgdemorocky3.atl88.online' {
+  
+  user { 'user1':
+    ensure => 'present',
+  }
+  package { ['httpd', 'chronyd']:
+    ensure => installed,
+  }
+
+  service { ['httpd', 'chronyd']:
+    ensure    => running,
+    enable    => true,
+    require   => Package['httpd', 'chronyd'],
+  }
+}
+
 node 'sgdemodebian1.atl88.online' {
   class { 'prometheus::node_exporter':
     version            => '1.8.2',
