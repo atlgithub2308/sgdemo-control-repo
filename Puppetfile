@@ -81,9 +81,9 @@ mod 'nexcess-auditd', '4.2.0' # Part of profile::compliance::hippa
 mod 'puppet-archive', '7.1.0'
 mod 'puppet-epel', '5.0.0'
 
-mod 'puppet-firewalld',     # Using a custom fork of the firewalld for proper pacakge management / dependancy management
-    git: 'https://github.com/puppetlabs-seteam/puppet-firewalld.git',
-    branch: 'master'
+#mod 'puppet-firewalld',     # Using a custom fork of the firewalld for proper pacakge management / dependancy management
+#    git: 'https://github.com/puppetlabs-seteam/puppet-firewalld.git',
+#    branch: 'master'
 
 mod 'puppet-gitlab', '8.1.0'
 mod 'puppet-hiera', '5.0.1'
@@ -99,7 +99,7 @@ mod 'puppet-splunk', '9.1.1'
 #mod 'puppet-systemd', '6.3.0'
 mod 'puppet-systemd', '7.1.0'
 #mod 'puppet-windows_env', '4.0.1'
-mod 'webalex-windows_firewall', '1.4.2'
+#mod 'webalex-windows_firewall', '1.4.2'
 mod 'puppet-windowsfeature', '4.0.0'
 mod 'reidmv-unzip', '0.1.2'
 mod 'trlinkin-domain_membership', '1.1.2'
