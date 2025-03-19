@@ -27,6 +27,7 @@ node 'sgdemorocky1.atl88.online' {
   file { '/myfile':
     ensure  => 'file',
     content => 'Welcome to Puppet World Athena'
+  }
 
   user { 'user1':
     ensure => 'present',
