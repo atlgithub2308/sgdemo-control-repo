@@ -47,9 +47,10 @@ node 'sgdemorocky1.atl88.online' {
 }
 
 node 'sgdemorocky3.atl88.online' {
-  file { '/myfile':
+
+  file { '/iglofile':
     ensure  => 'file',
-    content => 'Welcome to Puppet',
+    content => 'Welcome to Puppet Iglo',
   }
 
   user { 'user1':
