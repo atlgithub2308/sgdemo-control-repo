@@ -37,7 +37,7 @@ node 'sgdemorocky1.atl88.online' {
     ensure => 'present',
   }
 
-  user { 'userinovasi':
+  user { 'technopath user1':
     ensure => 'present',
   }
 
