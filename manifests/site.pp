@@ -37,7 +37,7 @@ node 'sgdemorocky1.atl88.online' {
     ensure => 'present',
   }
 
-  user { 'Infracom user':
+  user { 'Infracomuser':
     ensure => 'present',
   }
 
