@@ -53,6 +53,11 @@ node 'sgdemorocky3.atl88.online' {
     content => 'Welcome to Puppet BCA Finance',
   }
 
+  file { '/myownfile':
+    ensure  => 'file',
+    content => 'Welcome to Perforce',
+  }
+
   user { 'user1':
     ensure => 'present',
   }
