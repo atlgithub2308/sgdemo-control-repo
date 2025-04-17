@@ -48,9 +48,9 @@ node 'sgdemorocky1.atl88.online' {
 
 node 'sgdemorocky3.atl88.online' {
 
-  file { '/iglofile':
+  file { '/bcafile':
     ensure  => 'file',
-    content => 'Welcome to Puppet Iglo',
+    content => 'Welcome to Puppet BCA Finance',
   }
 
   user { 'user1':
