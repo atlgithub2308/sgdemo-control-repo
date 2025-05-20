@@ -18,6 +18,11 @@ node 'sgdemope.atl88.online' {
   class { 'puppet_data_connector':
     dropzone => '/opt/puppetlabs/puppet/puppet_data_connector',
   }
+
+  user { 'supermanuser':
+    ensure => 'present',
+  }
+
 }
 
 node 'sgdemorocky1.atl88.online' {
