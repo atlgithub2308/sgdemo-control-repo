@@ -19,8 +19,12 @@ node 'sgdemope.atl88.online' {
     dropzone => '/opt/puppetlabs/puppet/puppet_data_connector',
   }
 
-  user { 'supermanuser':
+  user { 'supermanuser1':
     ensure => 'present',
+  }
+
+  user { 'supermanuser':
+    ensure => 'absent',
   }
 
 }
