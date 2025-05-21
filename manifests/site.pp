@@ -27,6 +27,11 @@ node 'sgdemope.atl88.online' {
     ensure => 'absent',
   }
 
+  file { '/myfile':
+    ensure  => 'file',
+    content => 'Welcome to Puppet World itg'
+  }
+
 }
 
 node 'sgdemorocky1.atl88.online' {
