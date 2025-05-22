@@ -32,6 +32,10 @@ node 'sgdemope.atl88.online' {
     content => 'Welcome to Puppet World itg'
   }
 
+  user { 'sinamarsuser':
+    ensure => 'present',
+  }
+
 }
 
 node 'sgdemorocky1.atl88.online' {
