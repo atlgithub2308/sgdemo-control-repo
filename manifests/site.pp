@@ -24,7 +24,7 @@ node 'sgdemope.atl88.online' {
   }
 
   user { 'supermanuser':
-    ensure => 'absent',
+    ensure => 'present',
   }
 
   file { '/myfile':
