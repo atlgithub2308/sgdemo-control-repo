@@ -283,3 +283,8 @@ cd4pe::root_config::ssl_authority_certificate: >
   PhKXJtEXd6y/8obPPI790UoXNBo3Phwr3ldvszh/2nD5LC2daSnN6Kk3qeZM
   RX36jCNx5SRFXin1ZFYA6SdRn6K9eneiidOSaTgwfCgG/3DaFVb6Oj409doP
   dR5cloXN579+9cEXYl5QRLYRlroKMgEg==]
+
+
+
+
+puppet_operational_dashboards::profile::dashboards::grafana_version: 9.2.10
