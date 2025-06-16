@@ -287,4 +287,4 @@ cd4pe::root_config::ssl_authority_certificate: >
 
 
 
-puppet_operational_dashboards::profile::dashboards::grafana_version: 9.2.10
+puppet_operational_dashboards::profile::dashboards::grafana_version: latest
