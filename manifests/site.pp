@@ -174,7 +174,7 @@ node 'sgdemorocky3.atl88.online' {
 
   exec { 'initdb':
     command => '/usr/bin/postgresql-setup --initdb',
-    unless  => 'test -d /var/lib/pgsql/data/pg_wal',
+    creates => '/var/lib/pgsql/data/pg_wal',
     require => Package['postgresql-server'],
   }
 
