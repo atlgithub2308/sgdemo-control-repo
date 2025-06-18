@@ -149,8 +149,23 @@ node 'sgdemorocky3.atl88.online' {
   }
 
   service { ['httpd', 'chronyd']:
-    ensure    => running,
-    enable    => true,
-    require   => Package['httpd', 'chrony'],
+    ensure  => running,
+    enable  => true,
+    require => Package['httpd', 'chrony'],
   }
+
+  file_line { 'sshd_maxsessions':
+    path   => '/etc/ssh/sshd_config',
+    line   => 'MaxSessions 10',
+    match  => '^MaxSessions',
+    notify => Service['sshd'],
+  }
+
+  service { 'sshd':
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+  }
+
 }
