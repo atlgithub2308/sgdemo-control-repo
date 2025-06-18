@@ -168,4 +168,7 @@ node 'sgdemorocky3.atl88.online' {
     hasstatus  => true,
   }
 
+  package { 'postgresql':
+    ensure => installed,
+  }
 }
