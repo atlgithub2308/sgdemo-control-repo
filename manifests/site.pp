@@ -47,24 +47,6 @@ node 'sgdemorocky1.atl88.online' {
   }
 }
 
-node 'sgdemorocky3.atl88.online' {
-
-  file { '/bcafile':
-    ensure  => 'file',
-    content => 'Welcome to Puppet BCA Finance',
-  }
-  
-  package { ['httpd', 'chrony']:
-    ensure => installed,
-  }
-
-  service { ['httpd', 'chronyd']:
-    ensure    => running,
-    enable    => true,
-    require   => Package['httpd', 'chrony'],
-  }
-}
-
 node 'sgdemodebian1.atl88.online' {
   class { 'prometheus::node_exporter':
     version            => '1.8.2',
@@ -153,5 +135,22 @@ node 'sgdemorocky2.atl88.online' {
     command => '/usr/bin/firewall-cmd --permanent --add-service=http && /usr/bin/firewall-cmd --reload',
     unless  => '/usr/bin/firewall-cmd --list-all | grep http',
     require => Service['httpd'],
+  }
+}
+
+node 'sgdemorocky3.atl88.online' {
+  file { '/bidvfile':
+    ensure  => 'file',
+    content => 'Welcome to Puppet BIDV',
+  }
+
+  package { ['httpd', 'chrony']:
+    ensure => installed,
+  }
+
+  service { ['httpd', 'chronyd']:
+    ensure    => running,
+    enable    => true,
+    require   => Package['httpd', 'chrony'],
   }
 }
