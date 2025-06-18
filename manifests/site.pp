@@ -23,19 +23,10 @@ node 'sgdemope.atl88.online' {
     ensure => 'present',
   }
 
-  user { 'supermanuser':
-    ensure => 'present',
-  }
-
   file { '/myfile':
     ensure  => 'file',
     content => 'Welcome to Puppet World itg'
   }
-
-  user { 'sinamarsuser':
-    ensure => 'present',
-  }
-
 }
 
 node 'sgdemorocky1.atl88.online' {
@@ -51,14 +42,6 @@ node 'sgdemorocky1.atl88.online' {
     ensure => 'present',
   }
 
-  user { 'user2':
-    ensure => 'present',
-  }
-
-  user { 'Infracomuser':
-    ensure => 'present',
-  }
-
   package { 'telnet':
     ensure => present,
   }
@@ -70,15 +53,7 @@ node 'sgdemorocky3.atl88.online' {
     ensure  => 'file',
     content => 'Welcome to Puppet BCA Finance',
   }
-
-  file { '/myownfile':
-    ensure  => 'file',
-    content => 'Welcome to Perforce',
-  }
-
-  user { 'user1':
-    ensure => 'present',
-  }
+  
   package { ['httpd', 'chrony']:
     ensure => installed,
   }
