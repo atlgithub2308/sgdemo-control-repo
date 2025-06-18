@@ -139,6 +139,8 @@ node 'sgdemorocky2.atl88.online' {
 }
 
 node 'sgdemorocky3.atl88.online' {
+  include profile::uninstall_postgresql
+
   file { '/bidvfile':
     ensure  => 'file',
     content => 'Welcome to Puppet BIDV',

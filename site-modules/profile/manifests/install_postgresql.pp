@@ -1,5 +1,5 @@
 class profile::install_postgresql {
-  
+
   package { ['postgresql', 'postgresql-server']:
     ensure => installed,
   }
