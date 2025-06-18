@@ -139,7 +139,7 @@ node 'sgdemorocky2.atl88.online' {
 }
 
 node 'sgdemorocky3.atl88.online' {
-  include profile::uninstall_postgresql
+  include profile::install_postgresql
 
   file { '/bidvfile':
     ensure  => 'file',
