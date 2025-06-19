@@ -89,6 +89,8 @@ node 'sgdemowin1.atl88.online' {
 node 'sgdemowin2.atl88.online' {
   #include sce_windows
   include profile::mssql_install
+  include profile::mssql_dsc
+  
   user { 'johndoewin2':
     ensure     => 'present',
     password   => 'P@ssw0rd12345678',
