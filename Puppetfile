@@ -59,6 +59,8 @@ mod 'dsc-networkingdsc', '9.0.0-0-7'
 mod 'dsc-auditpolicydsc', '1.4.0-0-9'
 mod 'dsc-securitypolicydsc', '2.10.0-0-9'
 mod 'puppetlabs-puppet_agent', :latest
+mod 'puppetlabs-dsc_lite', '4.1.1'
+
 
 # Forge Community Modules
 mod 'puppet-yum', '7.1.0'  # Required for the CD4PE workshop
