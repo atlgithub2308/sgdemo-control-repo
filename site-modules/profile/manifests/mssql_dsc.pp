@@ -1,7 +1,8 @@
 class profile::mssql_dsc (
-  String  $instance_name     = 'MSSQLSERVER',
-  Boolean $dynamic_alloc     = false,
-  Integer $maxservermemory   = 8192,
+  String  $instance_name   = 'MSSQLSERVER',
+  Boolean $dynamic_alloc   = false,
+  Integer $minservermemory = 4096,
+  Integer $maxservermemory = 8192,
 ) {
   exec { 'install_sqlserverdsc_module':
     command => 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name SqlServerDsc -Force -Scope AllUsers"',
@@ -13,9 +14,11 @@ class profile::mssql_dsc (
     resource_name => 'SqlMemory',
     module        => 'SqlServerDsc',
     properties    => {
-      'InstanceName'     => $instance_name,
-      'DynamicAlloc'     => $dynamic_alloc,
-      'MaxServerMemory'  => $maxservermemory,
+      'InstanceName'  => $instance_name,
+      'DynamicAlloc'  => $dynamic_alloc,
+      'MinMemory'     => $minservermemory,
+      'MaxMemory'     => $maxservermemory,
+      'Ensure'        => 'Present',
     },
     require => Exec['install_sqlserverdsc_module'],
   }
