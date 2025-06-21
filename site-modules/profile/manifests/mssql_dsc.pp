@@ -4,7 +4,6 @@ class profile::mssql_dsc (
   Integer $minservermemory   = 4096,
   Integer $maxservermemory   = 8192,
 ) {
-
   exec { 'install_sqlserverdsc_module':
     command   => 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Install-Module -Name SqlServerDsc -Force -Scope AllUsers"',
     unless    => 'powershell.exe -NoProfile -Command "if (Get-Module -ListAvailable SqlServerDsc) { exit 0 } else { exit 1 }"',
@@ -13,9 +12,9 @@ class profile::mssql_dsc (
   }
 
   dsc { 'ConfigureSqlMemory':
-    dsc_resource_name => 'SqlMemory',
-    dsc_module_name   => 'SqlServerDsc',
-    dsc_properties    => {
+    resource_name => 'SqlMemory',
+    module        => 'SqlServerDsc',
+    properties    => {
       'InstanceName'     => $instance_name,
       'DynamicAlloc'     => $dynamic_alloc,
       'MinServerMemory'  => $minservermemory,
@@ -23,5 +22,4 @@ class profile::mssql_dsc (
     },
     require => Exec['install_sqlserverdsc_module'],
   }
-
 }
