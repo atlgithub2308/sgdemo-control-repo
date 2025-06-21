@@ -1,7 +1,6 @@
 class profile::mssql_dsc (
   String  $instance_name     = 'MSSQLSERVER',
   Boolean $dynamic_alloc     = false,
-  Integer $minservermemory   = 4096,
   Integer $maxservermemory   = 8192,
 ) {
   exec { 'install_sqlserverdsc_module':
@@ -16,7 +15,6 @@ class profile::mssql_dsc (
     properties    => {
       'InstanceName'     => $instance_name,
       'DynamicAlloc'     => $dynamic_alloc,
-      'MinServerMemory'  => $minservermemory,
       'MaxServerMemory'  => $maxservermemory,
     },
     require => Exec['install_sqlserverdsc_module'],
