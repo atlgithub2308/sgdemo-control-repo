@@ -4,22 +4,25 @@ class profile::mssql_dsc (
   Integer $minservermemory   = 4096,
   Integer $maxservermemory   = 8192,
 ) {
-
-  # Install SqlServerDsc module only if not already present
+  # Ensure SqlServerDsc PowerShell module is installed
   exec { 'install_sqlserverdsc_module':
-    command => 'powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "Install-Module -Name SqlServerDsc -Force -Scope AllUsers"',
-    unless  => 'powershell.exe -NoProfile -NonInteractive -Command "if (Get-Module -ListAvailable -Name SqlServerDsc) { exit 0 } else { exit 1 }"',
-    path    => ['C:/Windows/System32/WindowsPowerShell/v1.0'],
+    command   => 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Install-Module -Name SqlServerDsc -Force -Scope AllUsers"',
+    unless    => 'powershell.exe -NoProfile -Command "if (Get-Module -ListAvailable SqlServerDsc) { exit 0 } else { exit 1 }"',
+    path      => ['C:/Windows/System32/WindowsPowerShell/v1.0'],
     logoutput => true,
   }
 
-  # Configure SQL Server memory settings using DSC
-  dsc_sqlmemory { 'ConfigureSqlMemory':
-    dsc_instancename    => $instance_name,
-    dsc_dynamicalloc    => $dynamic_alloc,
-    dsc_minservermemory => $minservermemory,
-    dsc_maxservermemory => $maxservermemory,
-    require             => Exec['install_sqlserverdsc_module'],
+  # Use dynamic dsc resource from puppetlabs/dsc_lite
+  dsc { 'ConfigureSqlMemory':
+    dsc_resource_name => 'SqlMemory',
+    dsc_module_name   => 'SqlServerDsc',
+    dsc_properties    => {
+      InstanceName     => $instance_name,
+      DynamicAlloc     => $dynamic_alloc,
+      MinServerMemory  => $minservermemory,
+      MaxServerMemory  => $maxservermemory,
+    },
+    require => Exec['install_sqlserverdsc_module'],
   }
 
 }
