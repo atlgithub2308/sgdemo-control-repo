@@ -5,12 +5,11 @@ class profile::mssql_dsc (
   Integer $maxservermemory   = 8192,
 ) {
   exec { 'install_sqlserverdsc_module':
-    command   => 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Install-Module -Name SqlServerDsc -Force -Scope AllUsers"',
-    unless    => 'powershell.exe -NoProfile -Command "if (Get-Module -ListAvailable SqlServerDsc) { exit 0 } else { exit 1 }"',
-    path      => ['C:/Windows/System32/WindowsPowerShell/v1.0'],
+    command => 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name SqlServerDsc -Force -Scope AllUsers"',
+    unless  => 'powershell.exe -NoProfile -Command "if (Get-Module -ListAvailable -Name SqlServerDsc) { exit 0 } else { exit 1 }"',
+    path    => ['C:/Windows/System32/WindowsPowerShell/v1.0'],
     logoutput => true,
   }
-
   dsc { 'ConfigureSqlMemory':
     resource_name => 'SqlMemory',
     module        => 'SqlServerDsc',
