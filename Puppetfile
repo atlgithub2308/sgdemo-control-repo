@@ -55,7 +55,7 @@ mod 'puppetlabs-stdlib', '9.7.0'
 mod 'puppetlabs-tomcat', '7.1.0'
 mod 'puppetlabs-transition', '2.0.0'
 mod 'puppetlabs-vcsrepo', '6.1.0'
-mod 'dsc-networkingdsc', '9.0.0-0-7'
+mod 'dsc-networkingdsc', '9.1.0-0-0'
 mod 'dsc-auditpolicydsc', '1.4.0-0-9'
 mod 'dsc-securitypolicydsc', '2.10.0-0-9'
 mod 'puppetlabs-puppet_agent', :latest
