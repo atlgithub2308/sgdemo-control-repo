@@ -8,7 +8,7 @@ sce_linux::config:
 #    - 'Ensure telnet client is not installed'
   control_configs:
     "Ensure password expiration is 365 days or less":
-      pass_max_days: 365
+      pass_max_days: 500
 
 prometheus::manage_prometheus_server: true
 
