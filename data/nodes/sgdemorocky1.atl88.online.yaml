@@ -5,10 +5,16 @@ sce_linux::config:
   only:
     - 'ensure_aide_is_installed'
     - 'Ensure password expiration is 365 days or less'
-#    - 'Ensure telnet client is not installed'
+    - 'disable_or_remove_nfs'
   control_configs:
     "Ensure password expiration is 365 days or less":
       pass_max_days: 365
+    disable_or_remove_nfs: {}
+
+sce_linux::sce_options:
+  disable_or_remove_nfs:
+    dependent:
+      - disable_nfs_client
 
 prometheus::manage_prometheus_server: true
 
