@@ -42,9 +42,9 @@ node 'sgdemorocky1.atl88.online' {
     ensure => 'present',
   }
 
-  package { 'telnet':
-    ensure => present,
-  }
+  #package { 'telnet':
+  #  ensure => present,
+  #}
 }
 
 node 'sgdemodebian1.atl88.online' {
