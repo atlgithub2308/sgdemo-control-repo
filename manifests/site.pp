@@ -32,7 +32,7 @@ node 'sgdemope.atl88.online' {
 node 'sgdemorocky1.atl88.online' {
   include sce_linux
   include prometheus
-  
+
   file { '/myfile':
     ensure  => 'file',
     content => 'Welcome to Puppet World TISCO'
@@ -41,10 +41,6 @@ node 'sgdemorocky1.atl88.online' {
   user { 'user1':
     ensure => 'present',
   }
-
-  #package { 'telnet':
-  #  ensure => present,
-  #}
 }
 
 node 'sgdemodebian1.atl88.online' {
