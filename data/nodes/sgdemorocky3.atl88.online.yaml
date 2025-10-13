@@ -1,0 +1,11 @@
+sce_linux::benchmark: 'cis'
+sce_linux::config:
+  profile: 'server'
+  level: '1'
+  only:
+    - 'ensure_aide_is_installed'
+    - 'Ensure password expiration is 365 days or less'
+    - 'Ensure telnet client is not installed'
+#  control_configs:
+#    "Ensure password expiration is 365 days or less":
+#      pass_max_days: 365
