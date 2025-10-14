@@ -138,7 +138,7 @@ node 'sgdemorocky2.atl88.online' {
 
 node 'sgdemorocky3.atl88.online' {
   include profile::install_postgresql
-  #include sce_linux
+  include sce_linux
 
   file { '/bidvfile':
     ensure  => 'file',
