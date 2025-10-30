@@ -35,7 +35,7 @@ node 'sgdemorocky1.atl88.online' {
 
   file { '/myfile':
     ensure  => 'file',
-    content => 'Welcome to Puppet World TISCO'
+    content => 'Welcome to Puppet - AAA'
   }
 
   user { 'user1':
