@@ -4,7 +4,7 @@ web::index_html: |
     <head>
       <meta charset='UTF-8'>
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-      <title>Welcome to Puppet Bank Rakyat!!!</title>
+      <title>Welcome to Puppet!!!</title>
       <style>
         body {
           font-family: 'Arial', sans-serif;
