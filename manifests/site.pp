@@ -157,7 +157,7 @@ node 'sgdemorocky3.atl88.online' {
 
   file_line { 'sshd_maxsessions':
     path   => '/etc/ssh/sshd_config',
-    line   => 'MaxSessions 11',
+    line   => 'MaxSessions 10',
     match  => '^MaxSessions',
     notify => Service['sshd'],
   }
