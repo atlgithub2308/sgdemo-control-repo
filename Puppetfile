@@ -134,6 +134,7 @@ mod 'puppet-telegraf', '5.4.0'
 mod 'puppetlabs-influxdb', '2.4.0'
 mod 'puppetlabs-puppet_operational_dashboards', '2.4.0'
 mod 'puppet-prometheus', '15.0.0'
+
 mod 'puppetlabs-puppet_data_connector', '2.0.0'
 
 mod 'mypatch',
