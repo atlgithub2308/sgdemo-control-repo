@@ -140,9 +140,9 @@ node 'sgdemorocky3.atl88.online' {
   include profile::install_postgresql
   include sce_linux
 
-  file { '/bidvfile':
+  file { '/Danamonfile':
     ensure  => 'file',
-    content => 'Welcome to Puppet BIDV',
+    content => 'Welcome to Puppet Danamon',
   }
 
   package { ['httpd', 'chrony']:
