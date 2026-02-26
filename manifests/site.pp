@@ -140,9 +140,9 @@ node 'sgdemorocky3.atl88.online' {
   include profile::install_postgresql
   include sce_linux
 
-  file { '/Danamonfile':
+  file { '/justafile':
     ensure  => 'file',
-    content => 'Welcome to Puppet Danamon',
+    content => 'Welcome to Puppet !!!',
   }
 
   package { ['httpd', 'chrony']:
