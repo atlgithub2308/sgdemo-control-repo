@@ -25,7 +25,7 @@ node 'sgdemope.atl88.online' {
 
   file { '/myfile':
     ensure  => 'file',
-    content => 'Welcome to Puppet World itg'
+    content => 'Welcome to Puppet World itg',
   }
 }
 
@@ -35,7 +35,7 @@ node 'sgdemorocky1.atl88.online' {
 
   file { '/myfile':
     ensure  => 'file',
-    content => 'Welcome to Puppet - AAA'
+    content => 'Welcome to Puppet - AAA',
   }
 
   user { 'user1':
@@ -57,9 +57,9 @@ node 'sgdemowin1.atl88.online' {
   #include sce_windows
 
   user { 'johndoewin1':
-    ensure     => 'present',
-    password   => 'P@ssw0rd12345678',
-    groups     => ['Administrators'],
+    ensure   => 'present',
+    password => 'P@ssw0rd12345678',
+    groups   => ['Administrators'],
   }
 
   file { 'C:/mydir':
@@ -88,9 +88,9 @@ node 'sgdemowin2.atl88.online' {
   include profile::mssql_dsc
 
   user { 'johndoewin2':
-    ensure     => 'present',
-    password   => 'P@ssw0rd12345678',
-    groups     => ['Administrators'],
+    ensure   => 'present',
+    password => 'P@ssw0rd12345678',
+    groups   => ['Administrators'],
   }
 
   package { 'firefox':
@@ -100,14 +100,12 @@ node 'sgdemowin2.atl88.online' {
 }
 
 node 'sgdemorocky2.atl88.online' {
-
   $index_html_content = hiera('web::index_html')
-# Ensure the httpd package is installed
+
   package { 'httpd':
     ensure => installed,
   }
 
-# Ensure the Apache service is enabled and running
   service { 'httpd':
     ensure     => running,
     enable     => true,
@@ -115,12 +113,10 @@ node 'sgdemorocky2.atl88.online' {
     require    => Package['httpd'],
   }
 
-# Ensure the document root directory exists
   file { '/var/www/html':
     ensure => directory,
   }
 
-# Create a more fanciful index.html file
   file { '/var/www/html/index.html':
     ensure  => file,
     content => $index_html_content,
