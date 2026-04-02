@@ -81,8 +81,8 @@ mod 'kogitoapp-gitea', '1.0.4' # Do we need this, it is out of date and requires
                               # profile::puppet::seteam_master
 mod 'lwf-remote_file', '1.1.3'
 mod 'nexcess-auditd', '4.2.0' # Part of profile::compliance::hippa
-mod 'puppet-archive', '7.1.0'
-mod 'puppet-epel', '5.0.0'
+mod 'puppet-archive', '8.1.0'
+mod 'puppet-epel', '6.0.0'
 
 #mod 'puppet-firewalld',     # Using a custom fork of the firewalld for proper pacakge management / dependancy management
 #    git: 'https://github.com/puppetlabs-seteam/puppet-firewalld.git',
