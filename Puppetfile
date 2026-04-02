@@ -16,7 +16,7 @@ mod 'puppetlabs-chocolatey', '8.0.0'
 mod 'puppetlabs-cisco_ios', '2.0.0'
 #mod 'puppetlabs-ciscopuppet', '2.1.0'
 
-mod 'puppetlabs-comply', '3.5.0'
+mod 'puppetlabs-comply', '3.6.0'
 mod 'puppetlabs-concat', '9.0.1'
 #mod 'puppetlabs-device_manager', '4.1.0'
 mod 'puppetlabs-dism', '1.3.1'
