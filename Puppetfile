@@ -90,9 +90,9 @@ mod 'puppet-epel', '6.0.0'
 
 mod 'puppet-gitlab', '11.0.0'
 mod 'puppet-hiera', '7.0.0'
-mod 'puppet-jenkins', '6.0.0' # Do we need this, it is out of date and requires java < 5.0.0, and zypprepo
+#mod 'puppet-jenkins', '6.0.0' # Do we need this, it is out of date and requires java < 5.0.0, and zypprepo
 mod 'puppet-logrotate', '9.0.0'
-mod 'puppet-nginx', '5.0.0'
+mod 'puppet-nginx', '8.0.0'
 mod 'puppet-php', '10.1.0' # Requires zypprepo
 mod 'puppet-python', '8.0.0'
 mod 'puppet-rabbitmq', '13.2.0'
