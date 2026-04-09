@@ -88,10 +88,10 @@ mod 'puppet-epel', '6.0.0'
 #    git: 'https://github.com/puppetlabs-seteam/puppet-firewalld.git',
 #    branch: 'master'
 
-mod 'puppet-gitlab', '8.1.0'
+mod 'puppet-gitlab', '11.0.0'
 mod 'puppet-hiera', '5.0.1'
 mod 'puppet-jenkins', '6.0.0' # Do we need this, it is out of date and requires java < 5.0.0, and zypprepo
-mod 'puppet-logrotate', '7.0.1'
+mod 'puppet-logrotate', '9.0.0'
 mod 'puppet-nginx', '5.0.0'
 mod 'puppet-php', '10.1.0' # Requires zypprepo
 mod 'puppet-python', '8.0.0'
@@ -103,7 +103,7 @@ mod 'puppet-splunk', '9.1.1'
 mod 'puppet-systemd', '9.4.0'
 #mod 'puppet-windows_env', '4.0.1'
 #mod 'webalex-windows_firewall', '1.4.2'
-mod 'puppet-windowsfeature', '4.0.0'
+mod 'puppet-windowsfeature', '5.0.0'
 mod 'reidmv-unzip', '0.1.2'
 mod 'trlinkin-domain_membership', '1.1.2'
 mod 'tse-time', '1.0.1'
