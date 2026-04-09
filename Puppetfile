@@ -1,10 +1,10 @@
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
-mod 'puppetlabs-augeas_core', '1.4.1'
-mod 'puppetlabs-host_core', '1.2.0'
-mod 'puppetlabs-selinux_core', '1.3.0'
-mod 'puppetlabs-sshkeys_core', '2.4.0'
-mod 'puppetlabs-yumrepo_core', '2.0.0'
+mod 'puppetlabs-augeas_core', '2.0.1'
+mod 'puppetlabs-host_core', '2.0.1'
+mod 'puppetlabs-selinux_core', '2.0.1'
+mod 'puppetlabs-sshkeys_core', '3.0.1'
+mod 'puppetlabs-yumrepo_core', '3.0.1'
 mod 'puppetlabs-acl', '5.0.3'
 mod 'puppetlabs-apache', '11.1.0'
 mod 'puppetlabs-apt', '11.2.0'
