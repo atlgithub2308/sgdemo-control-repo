@@ -89,7 +89,7 @@ mod 'puppet-epel', '6.0.0'
 #    branch: 'master'
 
 mod 'puppet-gitlab', '11.0.0'
-mod 'puppet-hiera', '5.0.1'
+mod 'puppet-hiera', '7.0.0'
 mod 'puppet-jenkins', '6.0.0' # Do we need this, it is out of date and requires java < 5.0.0, and zypprepo
 mod 'puppet-logrotate', '9.0.0'
 mod 'puppet-nginx', '5.0.0'
