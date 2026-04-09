@@ -38,11 +38,11 @@ mod 'puppetlabs-mount_iso', '4.0.3' # Needs updated to support powershell 4.0.0
 mod 'puppetlabs-ntp', '10.1.0'
 #mod 'puppetlabs-panos', '2.0.0'
 mod 'puppetlabs-powershell', '6.0.0'
-mod 'puppetlabs-puppet_authorization', '0.5.1'
+mod 'puppetlabs-puppet_authorization', '1.0.0'
 mod 'puppetlabs-puppetserver_gem', '1.1.1'
-mod 'puppetlabs-pwshlib', '1.0.1'
-mod 'puppetlabs-reboot', '5.0.0'
-mod 'puppetlabs-registry', '5.0.1'
+mod 'puppetlabs-pwshlib', '2.0.1'
+mod 'puppetlabs-reboot', '5.1.0'
+mod 'puppetlabs-registry', '5.0.3'
 #mod 'puppetlabs-resource', '1.1.0'
 mod 'puppetlabs-ruby_task_helper', '1.0.0'
 mod 'puppetlabs-terraform', '0.7.1'
@@ -53,9 +53,9 @@ mod 'puppetlabs-servicenow_cmdb_integration', '0.2.0'
 mod 'puppetlabs-servicenow_reporting_integration', '1.0.0'
 mod 'puppetlabs-splunk_hec', '1.4.0' # Missing requirement of puppetlabs-puppet_metrics_collector
 mod 'puppetlabs-stdlib', '9.7.0'
-mod 'puppetlabs-tomcat', '7.1.0'
+mod 'puppetlabs-tomcat', '7.4.0'
 mod 'puppetlabs-transition', '2.0.0'
-mod 'puppetlabs-vcsrepo', '6.1.0'
+mod 'puppetlabs-vcsrepo', '7.0.0'
 mod 'dsc-networkingdsc', '9.1.0-0-0'
 mod 'dsc-auditpolicydsc', '1.4.0-0-9'
 mod 'dsc-securitypolicydsc', '2.10.0-0-9'
@@ -64,7 +64,7 @@ mod 'puppetlabs-dsc_lite', '5.0.0'
 
 
 # Forge Community Modules
-mod 'puppet-yum', '7.1.0'  # Required for the CD4PE workshop
+mod 'puppet-yum', '7.3.0'  # Required for the CD4PE workshop
 #mod 'WhatsARanjit-diskspace', '0.2.0'
 #mod 'WhatsARanjit-node_manager', '0.8.0'
 mod 'ayohrling-local_security_policy', '1.1.1'
