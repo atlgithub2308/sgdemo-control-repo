@@ -44,9 +44,9 @@ mod 'puppetlabs-pwshlib', '1.0.1'
 mod 'puppetlabs-reboot', '5.0.0'
 mod 'puppetlabs-registry', '5.0.1'
 #mod 'puppetlabs-resource', '1.1.0'
-mod 'puppetlabs-ruby_task_helper', '0.6.1'
+mod 'puppetlabs-ruby_task_helper', '1.0.0'
 mod 'puppetlabs-terraform', '0.7.1'
-mod 'puppetlabs-ruby_plugin_helper', '0.2.0'
+mod 'puppetlabs-ruby_plugin_helper', '0.3.0'
 mod 'puppetlabs-service', '3.1.0'
 mod 'puppetlabs-servicenow_change_requests', '0.4.1'
 mod 'puppetlabs-servicenow_cmdb_integration', '0.2.0'
@@ -60,7 +60,7 @@ mod 'dsc-networkingdsc', '9.1.0-0-0'
 mod 'dsc-auditpolicydsc', '1.4.0-0-9'
 mod 'dsc-securitypolicydsc', '2.10.0-0-9'
 mod 'puppetlabs-puppet_agent', :latest
-mod 'puppetlabs-dsc_lite', '4.1.1'
+mod 'puppetlabs-dsc_lite', '5.0.0'
 
 
 # Forge Community Modules
