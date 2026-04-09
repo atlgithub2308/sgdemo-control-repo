@@ -21,7 +21,7 @@ mod 'puppetlabs-concat', '9.0.1'
 #mod 'puppetlabs-device_manager', '4.1.0'
 mod 'puppetlabs-dism', '1.3.1'
 mod 'puppetlabs-docker', '9.1.0'
-mod 'puppetlabs-exec', '3.0.0'
+mod 'puppetlabs-exec', '4.0.0'
 mod 'puppetlabs-facter_task', '2.0.1'
 mod 'puppetlabs-firewall', '7.0.2'
 mod 'kogitoapp-ufw', '1.0.3'
@@ -122,11 +122,11 @@ mod 'netstat',
     git: 'https://github.com/ipcrm/ipcrm-netstat.git',
     ref: '64bcee0'
 
-mod 'puppetlabs-sce_linux', '2.6.0'
+mod 'puppetlabs-sce_linux', '2.6.1'
 mod 'puppetlabs-sce_windows', '2.2.1'
 
 mod 'encore-patching', '1.7.0'
-mod 'puppetlabs-support_tasks', '5.0.0'
+mod 'puppetlabs-support_tasks', '5.1.0'
 #mod 'atlforge2308-declared_classes', '0.1.1'
 
 
