@@ -130,7 +130,7 @@ mod 'puppetlabs-support_tasks', '5.1.0'
 #mod 'atlforge2308-declared_classes', '0.1.1'
 
 
-mod 'puppet-grafana', '15.0.0'
+#mod 'puppet-grafana', '15.0.0'
 mod 'puppet-telegraf', '7.2.1'
 mod 'puppetlabs-influxdb', '3.0.1'
 mod 'puppetlabs-puppet_operational_dashboards', '3.0.0'
