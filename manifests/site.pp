@@ -107,7 +107,7 @@ node 'sgdemorocky2.atl88.online' {
   }
 
   package { 'wget':
-    ensure => installed,
+    ensure => removed,
   }
 
   service { 'httpd':
