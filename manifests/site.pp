@@ -106,6 +106,10 @@ node 'sgdemorocky2.atl88.online' {
     ensure => installed,
   }
 
+  package { 'wget':
+    ensure => installed,
+  }
+
   service { 'httpd':
     ensure     => running,
     enable     => true,
