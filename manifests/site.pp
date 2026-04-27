@@ -94,7 +94,7 @@ node 'sgdemowin2.atl88.online' {
   }
 
   package { 'firefox':
-    ensure   => 'absent',
+    ensure   => 'present',
     provider => 'chocolatey',
   }
 }
