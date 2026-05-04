@@ -155,3 +155,5 @@ mod 'tamcheck',
   branch:         :control_branch,
   default_branch: 'production'
 
+mod 'puppetlabs-wsus_client', '6.3.0'
+
