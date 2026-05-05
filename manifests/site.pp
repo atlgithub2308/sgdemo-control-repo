@@ -101,7 +101,8 @@ node 'sgdemowin2.atl88.online' {
 
 node 'sgdemowin3.atl88.online' {
   class { 'wsus_client':
-    server_url => 'http://wsus01.atl88.online',
+    server_url           => 'http://wsus01.atl88.online',
+    enable_status_server => true,
   }
 }
 
