@@ -99,6 +99,12 @@ node 'sgdemowin2.atl88.online' {
   }
 }
 
+node 'sgdemowin3.atl88.online' {
+  class { 'wsus_client':
+    server_url => 'http://wsus01.atl88.online',
+  }
+}
+
 node 'sgdemorocky2.atl88.online' {
   $index_html_content = hiera('web::index_html')
 
