@@ -155,5 +155,9 @@ mod 'tamcheck',
   branch:         :control_branch,
   default_branch: 'production'
 
+mod 'dirty_frag',
+  git: 'https://github.com/albatrossflavour/dirty_frag.git',
+  branch: 'main'
+
 mod 'puppetlabs-wsus_client', '6.3.0'
 
