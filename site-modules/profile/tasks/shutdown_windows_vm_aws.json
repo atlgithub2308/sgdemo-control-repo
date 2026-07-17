@@ -1,0 +1,42 @@
+{
+  "description": "Shutdown a Windows EC2 instance in AWS.",
+  "input_method": "stdin",
+  "implementations": [
+    {
+      "name": "shutdown_windows_vm_aws.py",
+      "requirements": [
+        "shell"
+      ]
+    }
+  ],
+  "parameters": {
+    "instance_id": {
+      "description": "The EC2 instance ID to stop.",
+      "type": "String[1]"
+    },
+    "region": {
+      "description": "The AWS region that contains the EC2 instance.",
+      "type": "String[1]"
+    },
+    "wait": {
+      "description": "Wait until the instance reaches the stopped state.",
+      "type": "Optional[Boolean]"
+    },
+    "force": {
+      "description": "Force the instance to stop.",
+      "type": "Optional[Boolean]"
+    },
+    "dry_run": {
+      "description": "Check whether the caller has permission without stopping the instance.",
+      "type": "Optional[Boolean]"
+    },
+    "poll_seconds": {
+      "description": "Seconds between status checks when wait is true.",
+      "type": "Optional[Integer[1]]"
+    },
+    "timeout_seconds": {
+      "description": "Maximum seconds to wait for the instance to stop.",
+      "type": "Optional[Integer[1]]"
+    }
+  }
+}

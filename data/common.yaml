@@ -12,6 +12,16 @@ lookup_options:
     convert_to: 'Sensitive'
   "^profile::platform::baseline::linux::users::.*password$":
     convert_to: 'Sensitive'
+  
+  '^windows::admin_username$':
+    convert_to: 'Sensitive'
+
+  '^windows::admin_password$':
+    convert_to: 'Sensitive'
+
+windows::admin_username: ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEwDQYJKoZIhvcNAQEBBQAEggEAF/bhVooBWDCGJ+Xk4GljchzcbMW+V7v+nWjq6fuwMp8xuVBWvf7loybJV/G8CXqEdWBFwJeCrsrvlMizyDFGp7/XMYgK58JMx1nc5kPZN/gHlO4t1zHCywiq/6XeugXej3SxPoSgzugpF8gAhFeyZ5j923fS7Lf9kVJKNZc5Em2QR6IqvmsdCA6AzVpexM7Fu9qQjw9gR1J1rtwGil1ZLjGEeIaqVrOKUrtYlh4TO6wxkjqTmlfYcKC2GJ+QesUn48E7NprnmKyLU1aMmE/EgrsGCGwpvLDWkDKF3B4awEjF8DH8m9Z94qXdgiG1GoW064dmHAZpueADEwD3uWkXiDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBSKalbtraQFAiDSMxLM9cGgBBSS6KGqgMCfAB5KT8bqFLz]
+
+windows::admin_password: ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEwDQYJKoZIhvcNAQEBBQAEggEASu2FHxNXXYKeD1tvt/E+vWsVaaWlauR4CSZoI7R9xGMRuGzGwgb2V2r3LyY2L5I/Lf6gN+jIud4IfkT9c6uAk6x3F7yydmKUfNppxNvWhb2R5h6ltuS2XLjoTY3vGmohcRU5a+71/suipyWMgECLF8gG8K6cffUhFwqk4EQs51+yzRaBGQUjlhCzczDDY6IFbJGusProjzfI87sHpMJjsrkDtqrWS041YeyoPVpKpJTCRlX81EOCDTxWrV4kkRzUHhl4C9tl+01GIi2T5HZ/kRo29u2iYat0ml/eXPJpttkry1/q2IK5DgbBEkTJHSRrMv9Cl1gjCZ3kule0esIRnjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDSUm5HYg/5PL41hOC4fXZbgBDTupxFlU/u3CiTwATCn9YS]
 
 ##
 # Hiera
