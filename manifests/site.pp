@@ -20,8 +20,10 @@ node 'sgdemope.atl88.online' {
   }
 
   $password = lookup('windows::admin_password')
-  notice("Password value = ${password}")
-  
+  #notice("Password value = ${password}")
+  notify { "Password = ${password}":
+  }
+
   user { 'user1':
     ensure => 'present',
   }
