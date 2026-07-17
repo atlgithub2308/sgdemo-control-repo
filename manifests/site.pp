@@ -90,6 +90,11 @@ node 'sgdemowin2.atl88.online' {
   include profile::mssql_install
   include profile::mssql_dsc
 
+  file { 'C:/ProgramData/PuppetLabs/facter/facts.d/location.txt':
+    ensure  => file,
+    content => "location=sydney\n",
+  }
+
   user { 'johndoewin2':
     ensure   => 'present',
     password => 'P@ssw0rd12345678',
