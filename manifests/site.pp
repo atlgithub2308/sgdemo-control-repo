@@ -73,7 +73,7 @@ node 'sgdemowin1.atl88.online' {
 
   file { 'C:/mydir/myfile':
     ensure  => 'file',
-    content => 'Welcome to Puppet',
+    content => 'This is my new content',
   }
 
   package { 'GoogleChrome':
