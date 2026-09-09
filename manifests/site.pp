@@ -28,6 +28,9 @@ node 'sgdemope.atl88.online' {
     ensure => 'present',
   }
 
+  user { 'user2':
+    ensure => 'present',
+  }
   file { '/myfile':
     ensure  => 'file',
     content => 'Welcome to Puppet World itg',
