@@ -122,7 +122,7 @@ mod 'netstat',
     git: 'https://github.com/ipcrm/ipcrm-netstat.git',
     ref: '64bcee0'
 
-mod 'puppetlabs-sce_linux', '2.6.1'
+mod 'puppetlabs-sce_linux', '2.9.0'
 mod 'puppetlabs-sce_windows', '2.2.1'
 
 mod 'encore-patching', '1.7.0'

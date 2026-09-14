@@ -4,8 +4,8 @@ sce_linux::config:
   level: '1'
   only:
     - 'ensure_aide_is_installed'
-    - 'Ensure password expiration is 365 days or less'
+    - 'Ensure password expiration is configured'
     - 'Ensure telnet client is not installed'
 #  control_configs:
-#    "Ensure password expiration is 365 days or less":
+#    "Ensure password expiration is configured":
 #      pass_max_days: 365
