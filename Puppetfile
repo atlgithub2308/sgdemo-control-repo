@@ -161,3 +161,7 @@ mod 'dirty_frag',
 
 mod 'puppetlabs-wsus_client', '6.3.0'
 
+
+mod 'vuln_scan',
+  git: 'https://github.com/matthewrstone/puppet-vuln_scan',
+  ref: 'main'
