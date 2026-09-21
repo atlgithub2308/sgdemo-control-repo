@@ -66,7 +66,6 @@ node 'sgdemowin1.atl88.online' {
 
   user { 'johndoewin1':
     ensure   => 'present',
-    password => 'P@ssw0rd12345678',
     groups   => ['Administrators'],
   }
 
