@@ -161,7 +161,7 @@ node 'sgdemorocky3.atl88.online' {
 
   file { '/justafile':
     ensure  => 'file',
-    content => 'Welcome to Puppet !!!',
+    content => 'Welcom123456',
   }
 
   package { ['httpd', 'chrony']:
