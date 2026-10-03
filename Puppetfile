@@ -141,7 +141,7 @@ mod 'puppetlabs-puppet_data_connector', '2.0.0'
 mod 'puppetlabs-edgeops', '1.0.0'
 
 mod 'mypatch',
-  git:            'https://github.com/atlgithub2308/mypatch.git',
+  git:            'git@github.com:atlgithub2308/mypatch.git',
   branch:         :control_branch,
   default_branch: 'production'
 
