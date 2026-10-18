@@ -19,11 +19,6 @@ node 'sgdemope.atl88.online' {
     dropzone => '/opt/puppetlabs/puppet/puppet_data_connector',
   }
 
-  $password = lookup('windows::admin_password')
-  #notice("Password value = ${password}")
-  notify { "Password = ${password}":
-  }
-
   user { 'user1':
     ensure => 'present',
   }
