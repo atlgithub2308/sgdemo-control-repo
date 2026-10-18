@@ -108,10 +108,13 @@ node 'sgdemowin2.atl88.online' {
 }
 
 node 'sgdemowin3.atl88.online' {
+  # wsus01.atl88.online does not exist, so Windows Update and Defender signatures
+  # were failing. Purge the WSUS policy values so win3 uses Microsoft Update again.
   class { 'wsus_client':
-    server_url           => 'http://wsus01.atl88.online',
-    enable_status_server => true,
+    purge_values => true,
   }
+
+  include sce_windows
 }
 
 node 'sgdemorocky2.atl88.online' {
