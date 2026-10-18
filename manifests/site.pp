@@ -101,7 +101,7 @@ node 'sgdemowin2.atl88.online' {
 
   user { 'johndoewin2':
     ensure   => 'present',
-    password => 'P@ssw0rd12345678',
+    password => lookup('windows::johndoewin2_password'),
     groups   => ['Administrators'],
   }
 
