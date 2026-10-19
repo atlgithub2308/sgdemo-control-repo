@@ -1,0 +1,75 @@
+#!/usr/libexec/platform-python
+# Managed by Puppet (profile::pvs_rescan_on_boot).
+#
+# PVS keeps its list of scans in memory, so after a reboot its UI shows
+# "No scans yet." Run one fleet scan of the Vulnerability Scanning node group
+# at boot so there is always a current scan to show.
+import json
+import socket
+import sys
+import time
+import urllib.request
+
+PVS = 'http://127.0.0.1:8000'
+NODE_GROUP = 'c6637336-5800-45f6-861d-dfd35812ef5a'  # PE node group "Vulnerability Scanning"
+PE_HOST = 'sgdemope.atl88.online'
+# The other scan targets may be booting at the same time; give their agents
+# time to reconnect to PE before scanning them.
+SETTLE_SECONDS = 180
+
+
+def log(message):
+    print(message, flush=True)
+
+
+def call(method, path, body=None):
+    data = json.dumps(body).encode() if body is not None else None
+    request = urllib.request.Request(PVS + path, data=data, method=method,
+                                     headers={'Content-Type': 'application/json'})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+
+def wait_for(name, check, attempts=60, interval=10):
+    for _ in range(attempts):
+        try:
+            if check():
+                return
+        except Exception:
+            pass
+        time.sleep(interval)
+    log('Gave up waiting for {}'.format(name))
+    sys.exit(1)
+
+
+def pe_reachable():
+    socket.create_connection((PE_HOST, 8143), timeout=5).close()
+    return True
+
+
+def run_scan():
+    scan = call('POST', '/api/scans/orchestrated', {
+        'source_type': 'node_group', 'node_group_id': NODE_GROUP,
+        'scan_type': 'rootfs', 'target': '/',
+    })
+    log('Started scan {}'.format(scan['id']))
+    for _ in range(120):
+        time.sleep(15)
+        scan = call('GET', '/api/scans/' + scan['id'])
+        if scan['status'] != 'running':
+            break
+    problems = (scan.get('orch_info') or {}).get('problem_nodes') or []
+    log('Scan {} {}: {} nodes, {} findings, problem nodes: {}'.format(
+        scan['id'], scan['status'], scan.get('asset_count'),
+        scan.get('total_findings'), problems or 'none'))
+    return scan['status'] == 'completed' and not problems
+
+
+wait_for('PVS', lambda: call('GET', '/api/health').get('status') == 'ok')
+wait_for('the PE orchestrator', pe_reachable)
+time.sleep(SETTLE_SECONDS)
+
+if not run_scan():
+    log('Retrying in 5 minutes')
+    time.sleep(300)
+    run_scan()

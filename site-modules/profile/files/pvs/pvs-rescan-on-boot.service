@@ -1,0 +1,12 @@
+# Managed by Puppet (profile::pvs_rescan_on_boot).
+[Unit]
+Description=Run a PVS fleet scan after boot (PVS forgets its scan list on restart)
+Wants=network-online.target
+After=network-online.target docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/pvs-rescan-on-boot
+
+[Install]
+WantedBy=multi-user.target

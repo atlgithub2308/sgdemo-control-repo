@@ -127,6 +127,8 @@ node 'sgdemowin3.atl88.online' {
 }
 
 node 'sgdemorocky2.atl88.online' {
+  include profile::pvs_rescan_on_boot
+
   $index_html_content = hiera('web::index_html')
 
   package { 'httpd':
