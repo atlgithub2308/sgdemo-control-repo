@@ -115,6 +115,15 @@ node 'sgdemowin3.atl88.online' {
   }
 
   include sce_windows
+
+  # The built-in Administrator can be exempt from account lockout, and it was
+  # the most-guessed name (about 29,500 of 34,377 attempts in win3's last 6 hours).
+  # sce_windows 2.2.1 maps CIS 1.2.3 (Allow Administrator account lockout) to the
+  # reset-counter setting instead, so disable the account, as it already is on win2.
+  dsc_securityoption { 'Disable built-in Administrator':
+    dsc_name                                  => 'Disable built-in Administrator',
+    dsc_accounts_administrator_account_status => 'Disabled',
+  }
 }
 
 node 'sgdemorocky2.atl88.online' {
