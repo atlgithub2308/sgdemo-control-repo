@@ -114,6 +114,8 @@ node 'sgdemowin3.atl88.online' {
     purge_values => true,
   }
 
+  # win1 and win2 get sce_windows from the PE console (node group wingrp).
+  include sce_windows
   include profile::windows::lockdown
 }
 
