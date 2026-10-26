@@ -57,7 +57,7 @@ node 'sgdemodebian2.atl88.online' {
 }
 
 node 'sgdemowin1.atl88.online' {
-  #include sce_windows
+  include profile::windows::lockdown
 
   user { 'johndoewin1':
     ensure   => 'present',
@@ -86,7 +86,7 @@ node 'sgdemowin1.atl88.online' {
 }
 
 node 'sgdemowin2.atl88.online' {
-  #include sce_windows
+  include profile::windows::lockdown
   include profile::mssql_install
   include profile::mssql_dsc
 
@@ -114,16 +114,7 @@ node 'sgdemowin3.atl88.online' {
     purge_values => true,
   }
 
-  include sce_windows
-
-  # The built-in Administrator can be exempt from account lockout, and it was
-  # the most-guessed name (about 29,500 of 34,377 attempts in win3's last 6 hours).
-  # sce_windows 2.2.1 maps CIS 1.2.3 (Allow Administrator account lockout) to the
-  # reset-counter setting instead, so disable the account, as it already is on win2.
-  dsc_securityoption { 'Disable built-in Administrator':
-    dsc_name                                  => 'Disable built-in Administrator',
-    dsc_accounts_administrator_account_status => 'Disabled',
-  }
+  include profile::windows::lockdown
 }
 
 node 'sgdemorocky2.atl88.online' {

@@ -1,10 +1,18 @@
+# Password and lockout policy only (CIS 1.1.x / 1.2.x), the same on sgdemowin1, 2 and 3.
+# win3 had no lockout at all and was brute-forced over RDP (2026-10-18 incident).
 sce_windows::framework: 'cis'
 sce_windows::config:
   profile: 'member_server'
   level: '1'
   only:
+    - 'c1_1_1'
     - 'c1_1_2'
+    - 'c1_1_3'
+    - 'c1_1_4'
+    - 'c1_1_5'
+    - 'c1_2_1'
+    - 'c1_2_2'
+    - 'c1_2_4'
   control_configs:
     'c1_1_2':
         dsc_maximum_password_age: 365
-

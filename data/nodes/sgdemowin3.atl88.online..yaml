@@ -1,4 +1,4 @@
-# Password and lockout policy only (CIS 1.1.x / 1.2.x), matching sgdemowin1/2.
+# Password and lockout policy only (CIS 1.1.x / 1.2.x), the same on sgdemowin1, 2 and 3.
 # win3 had no lockout at all and was brute-forced over RDP (2026-10-18 incident).
 sce_windows::framework: 'cis'
 sce_windows::config:
