@@ -10,8 +10,8 @@ mod 'puppetlabs-apache', '13.1.0'
 mod 'puppetlabs-apt', '11.2.0'
 mod 'puppetlabs-aws', '2.1.0'
 mod 'puppetlabs-bolt_shim', '0.4.0'
-mod 'puppetlabs-cd4pe', '3.4.0'
-mod 'puppetlabs-cd4pe_jobs', '1.7.3'
+mod 'puppetlabs-cd4pe', '3.4.1'
+mod 'puppetlabs-cd4pe_jobs', '1.7.6'
 mod 'puppetlabs-chocolatey', '8.0.3'
 mod 'puppetlabs-cisco_ios', '2.0.0'
 #mod 'puppetlabs-ciscopuppet', '2.1.0'
@@ -123,7 +123,10 @@ mod 'netstat',
     ref: '64bcee0'
 
 mod 'puppetlabs-sce_linux', '2.9.0'
-mod 'puppetlabs-sce_windows', '2.2.1'
+mod 'puppetlabs-sce_windows', '2.3.0'
+# sce_windows 2.3.0 replaced its DSC account/audit policy resources with these two
+mod 'puppetlabs-security_policy', '1.2.0'
+mod 'puppetlabs-audit_policy', '1.2.2'
 
 mod 'encore-patching', '1.7.0'
 mod 'puppetlabs-support_tasks', '5.1.0'
